@@ -360,12 +360,12 @@ run_distrobox() (
 		# First we start the container
 		"${distrobox_path}"/distrobox enter "${name}" -- touch /dev/null
 
-		IFS=" "
+		IFS="¤"
 		for app in ${exported_apps}; do
 			"${distrobox_path}"/distrobox enter "${name}" -- distrobox-export --app "${app}"
 		done
 
-		IFS=" "
+		IFS="¤"
 		for bin in ${exported_bins}; do
 			"${distrobox_path}"/distrobox enter "${name}" -- distrobox-export --bin "${bin}" --export-path "${exported_bins_path}"
 		done
